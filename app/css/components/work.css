@@ -1,0 +1,27 @@
+@import '../common/typography';
+@import '../common/colors';
+@import '../common/layout';
+
+.work {
+  display: table;
+  width: 33%;
+  max-height: 600px;
+}
+
+.card-media {
+  height: 300px;
+  width: 100%;
+  display: flex;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  font-size: var(--fontMedium);
+  align-items: flex-end;
+}
+
+.title {
+  padding: 10px;
+  width: 100%;
+  color: white;
+  background-color: rgba(0,0,0,0.65);
+}

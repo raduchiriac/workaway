@@ -1,0 +1,25 @@
+@import 'settings';
+@import 'common/layout';
+@import 'common/typography';
+
+@import url(https://fonts.googleapis.com/icon?family=Material+Icons);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--fontRoboto);
+}
+
+.app {
+  @apply --box;
+  height: 100%;
+  font-weight: normal;
+  font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

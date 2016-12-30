@@ -1,0 +1,9 @@
+node_modules
+npm-debug.log
+public
+compiled
+.tmp
+.swp
+.vscode
+*.pyc
+*.pyd

@@ -1,0 +1,10 @@
+:root {
+
+  --box {
+    padding: 8px;
+  }
+
+  --flexNotMoreThan200 {
+    flex: 0 1 200px;
+  }
+}

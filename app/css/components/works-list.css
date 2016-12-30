@@ -1,0 +1,13 @@
+@import '../settings';
+@import '../common/typography';
+@import '../common/card';
+
+.works-list {
+  width: 95%;
+  max-width: 880px;
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}

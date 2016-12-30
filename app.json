@@ -1,0 +1,10 @@
+{
+  "name": "",
+  "description": "",
+  "repository": "",
+  "logo": "",
+  "keywords": ["node", "express", "static", "react", "webpack", "mongodb"],
+  "addons" : [
+  	"mongolab"
+  ]
+}
