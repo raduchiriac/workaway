@@ -9,15 +9,18 @@ import styles from '../css/components/works-list';
 class WorksList extends React.Component {
   constructor(props) {
     super(props);
+
     this.cx = classNames.bind(styles);
+    this.handleFavorite = this.handleFavorite.bind(this);
+    this.handleArchive = this.handleArchive.bind(this);
   }
 
-  handleFavorite(wid) {
-    makeWorkFavorite(wid);
+  handleFavorite(wid, favorite) {
+    this.props.makeWorkFavorite(wid, favorite);
   }
 
   handleArchive(wid) {
-    makeWorkArchive(wid);
+    this.props.makeWorkArchive(wid);
   }
 
   render() {
@@ -27,6 +30,7 @@ class WorksList extends React.Component {
       key={key}
       link={work.link}
       text={work.title}
+      favorite={work.favorite}
       handleArchive={this.handleArchive}
       handleFavorite={this.handleFavorite}
       img={work.img} />);
@@ -40,11 +44,15 @@ class WorksList extends React.Component {
 }
 
 function mapStateToProps(state) {
-	return {...state.work};
+  return {
+    works: state.work.works
+  };
 }
 
 WorksList.propTypes = {
   works: PropTypes.array.isRequired,
+  makeWorkFavorite: PropTypes.func.isRequired,
+  makeWorkArchive: PropTypes.func.isRequired
 };
 
 export default connect(mapStateToProps, { makeWorkFavorite, makeWorkArchive })(WorksList);

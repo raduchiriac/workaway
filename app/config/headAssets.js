@@ -53,6 +53,6 @@ const linkAssets = () => {
   return isDev() ? links.filter(l => l.rel !== 'stylesheet') : links;
 };
 
-export const title = 'reactGo - just ship it';
+export const title = '';
 export const meta = metaAssets();
 export const link = linkAssets();

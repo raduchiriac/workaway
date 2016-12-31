@@ -29,6 +29,7 @@ export default (store) => {
     }
     callback();
   };
+
   return (
     <Route path="/" component={App}>
       <IndexRoute component={Works} fetchData={fetchWorksData} />

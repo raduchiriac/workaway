@@ -1,8 +1,9 @@
 import React, { PropTypes } from 'react';
 
 import classNames from 'classnames/bind';
-import {Card} from 'material-ui/Card';
+import Card from 'material-ui/Card';
 import IconButton from 'material-ui/IconButton';
+import FontIcon from 'material-ui/FontIcon';
 import styles from '../css/components/work';
 
 class Work extends React.Component {
@@ -14,7 +15,7 @@ class Work extends React.Component {
   }
 
   handleFavorite() {
-    this.props.handleFavorite(this.props.wid);
+    this.props.handleFavorite(this.props.wid, this.props.favorite);
   }
 
   handleArchive() {
@@ -30,10 +31,10 @@ class Work extends React.Component {
           </div>
         </a>
         <div>
-          <IconButton iconClassName="material-icons" onClick={this.handleFavorite}>
-            star
+          <IconButton onClick={this.handleFavorite}>
+            <FontIcon className="material-icons" color={this.props.favorite ? 'orange' : ''}>star</FontIcon>
           </IconButton>
-          <IconButton iconClassName="material-icons" onClick={this.handleArchive}>
+          <IconButton iconClassName="material-icons" onClick={this.handleArchive} disabled={!!this.props.favorite}>
             archive
           </IconButton>
         </div>

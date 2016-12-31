@@ -17,7 +17,7 @@ class Works extends Component {
 
   pageMeta() {
     return [
-      { name: 'description', content: 'workaway crawl' }
+      { name: 'description', content: '' }
     ];
   }
 

@@ -10,7 +10,7 @@ const WorksSchema = new mongoose.Schema({
   img: String,
   link: String,
   archived: Number,
-  fav: Number,
+  favorite: Number,
   insertion_date: { type: Date, default: Date.now }
 });
 

@@ -1,17 +1,29 @@
-```
+
+A workaway.info paginated crawler for better organizing your search results. Express on the backend and React + Redux + Material UI for the frontend
+
+##### TODO
+
+- [ ] Dynamic crawling with regions as a parameter
+- [x] Archive, favorite actions
+- [ ] Display excerpt
+- [ ] "Load more" when scrolling
+
+### Prerequisites
+```shell
 $ pip install scrapy pymongo
+$ brew update && brew install node mongodb
 ```
-### Start MongoDB service
-```
-$ mongod
+1. Start your MongoDB service
+```shell
+$ cd / && mongod
 ```
 
-### Do your first crawl
-```
+2. Do your first crawl
+```shell
 $ cd workaway && scrapy crawl works
 ```
 
-### Visualise
-```
+### Run
+```shell
 $ npm i && npm run dev
 ```

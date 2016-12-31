@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import { Router, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import injectTapEventPlugin from 'react-tap-event-plugin';
+
 import createRoutes from './routes';
 import * as types from './types';
 import configureStore from './store/configureStore';
@@ -12,12 +13,11 @@ import preRenderMiddleware from './middlewares/preRenderMiddleware';
 // Grab the state from a global injected into
 // server-generated HTML
 const initialState = window.__INITIAL_STATE__;
-
-injectTapEventPlugin();
-
 const store = configureStore(initialState, browserHistory);
 const history = syncHistoryWithStore(browserHistory, store);
 const routes = createRoutes(store);
+
+injectTapEventPlugin();
 
 /**
  * Callback function handling frontend route changes.

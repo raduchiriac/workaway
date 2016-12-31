@@ -46,9 +46,9 @@ export default (app) => {
   // works routes
   if (worksController) {
     app.get('/works', worksController.all);
-    app.post('/work/:id', worksController.add);
     app.put('/work/:id', worksController.update);
-    app.delete('/work/:id', worksController.remove);
+    // app.post('/work/:id', worksController.add);
+    // app.delete('/work/:id', worksController.remove);
   } else {
     console.warn(unsupportedMessage('works routes'));
   }

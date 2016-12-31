@@ -5,16 +5,31 @@ import * as types from '../types';
 
 polyfill();
 
-export function makeWorksRequest(method, id, data, api = '/works') {
-  return request[method](api + (id ? ('/' + id) : ''), data);
+export function makeWorksRequest(method, id, data, api = '/work') {
+  return request[method](api + (id ? ('/' + id) : 's'), data);
 }
 
-export function makeWorkFavorite(id) {
-  console.log('>> dispatch fa', id);
-  return {type: types.WORK_FAVORITE, id};
+// FAVORITE
+export function makeWorkFavoriteRedux(id, favorite) {
+  return {type: types.WORK_FAVORITE, id, favorite};
+}
+
+export function makeWorkFavorite(id, currentFavorite) {
+  return dispatch => {
+    const f = currentFavorite ? 0 : 1;
+    return makeWorksRequest('put', id, {favorite: f})
+    .then(() => dispatch(makeWorkFavoriteRedux(id, f)));
+  };
+}
+
+// ARCHIVE
+export function workArchiveRedux(id) {
+  return {type: types.WORK_ARCHIVE, id};
 }
 
 export function makeWorkArchive(id) {
-  console.log('>> dispatch ar', id);
-  return {type: types.WORK_ARCHIVE, id};
+  return dispatch => {
+    return makeWorksRequest('put', id, {archived: 1})
+      .then(() => dispatch(workArchiveRedux(id)));
+  };
 }

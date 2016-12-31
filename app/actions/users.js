@@ -12,7 +12,6 @@ function makeUserRequest(method, data, api = '/login') {
   return request[method](api, data);
 }
 
-
 // Log In Action Creators
 export function beginLogin() {
   return { type: types.MANUAL_LOGIN_USER };

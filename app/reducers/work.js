@@ -1,3 +1,4 @@
+import _ from 'lodash';
 import { combineReducers } from 'redux';
 import * as types from '../types';
 
@@ -10,9 +11,15 @@ const works = (
       if (action.data) return action.data;
       return state;
     case types.WORK_ARCHIVE:
-      return state.filter(t => t.id !== action.id);
+      return state.filter(t => t.wid !== action.id);
     case types.WORK_FAVORITE:
-      return state;
+      return state.map(t => {
+        const w = t;
+        if (t.wid === action.id) {
+          w.favorite = action.favorite;
+        }
+        return w;
+      });
     default:
       return state;
   }
