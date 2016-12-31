@@ -54,4 +54,3 @@ export default (store, props) => {
   const headAssets = Helmet.rewind();
   return buildPage({ componentHTML, initialState, headAssets, analyticsScript });
 };
-

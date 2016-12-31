@@ -26,14 +26,10 @@ class WorksList extends React.Component {
   render() {
     const items = this.props.works.map((work, key) => <Work
       index={key}
-      wid={work.wid}
       key={key}
-      link={work.link}
-      text={work.title}
-      favorite={work.favorite}
+      work={work}
       handleArchive={this.handleArchive}
-      handleFavorite={this.handleFavorite}
-      img={work.img} />);
+      handleFavorite={this.handleFavorite} />);
 
     return (
       <div className={this.cx('works-list')}>

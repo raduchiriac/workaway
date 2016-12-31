@@ -5,7 +5,7 @@ A workaway.info paginated crawler for better organizing your search results. Exp
 
 - [ ] Dynamic crawling with regions as a parameter
 - [x] Archive, favorite actions
-- [ ] Display excerpt
+- [x] Display excerpt
 - [ ] "Load more" when scrolling
 
 ### Prerequisites
